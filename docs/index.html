@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Whisper & Video Studio — GPU-accelerated batch video-to-audio extraction and speech-to-text powered by faster-whisper and FFmpeg.">
+  <meta name="theme-color" content="#08090d">
+  <title>Whisper & Video Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav">
+    <a class="brand" href="#">
+      <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+      <span>Whisper<span>Studio</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#gallery">Screenshots</a>
+      <a href="#quickstart">Quick Start</a>
+    </nav>
+    <a class="nav-github" href="https://github.com/ASHISH213/whisper-video-studio" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+    <button class="menu" aria-label="Open navigation"><i></i><i></i></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow glow-a"></div><div class="hero-glow glow-b"></div>
+      <div class="hero-content reveal">
+        <div class="eyebrow"><span class="pulse"></span> OPEN SOURCE · LOCAL · GPU ACCELERATED</div>
+        <h1>Turn hours of video<br><em>into knowledge.</em></h1>
+        <p class="hero-copy">A powerful batch transcription studio for video and audio. Extract speech, transcribe with faster-whisper, and generate timestamped study notes — locally or on Google Colab.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://colab.research.google.com/github/ASHISH213/whisper-video-studio/blob/main/Whisper_Video_Studio.ipynb" target="_blank" rel="noreferrer"><span>▶</span> Open in Colab</a>
+          <a class="btn secondary" href="https://github.com/ASHISH213/whisper-video-studio" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+        </div>
+        <div class="hero-meta"><span>Python 3.9+</span><b>·</b><span>CUDA 12</span><b>·</b><span>FFmpeg</span><b>·</b><span>MIT License</span></div>
+      </div>
+
+      <div class="hero-terminal reveal delay-1">
+        <div class="terminal-head"><div class="dots"><i></i><i></i><i></i></div><span>whisper-video-studio</span><span class="terminal-status">● GPU READY</span></div>
+        <div class="terminal-body">
+          <div class="line muted">$ python colab_studio.py</div>
+          <div class="line"><span class="cyan">▸</span> Initializing transcription studio...</div>
+          <div class="line"><span class="green">✓</span> NVIDIA GPU detected <b>RTX / CUDA 12</b></div>
+          <div class="line"><span class="green">✓</span> faster-whisper loaded <b>large-v3</b></div>
+          <div class="line"><span class="cyan">▸</span> Scanning media directory...</div>
+          <div class="scan"><span>18 files</span><div class="bar"><i></i></div><span>100%</span></div>
+          <div class="line"><span class="green">✓</span> Ready for batch transcription</div>
+          <div class="live"><span class="live-dot"></span> LIVE <span>12.4× realtime</span><span>ETA 00:08:42</span></div>
+        </div>
+      </div>
+      <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <section class="stats">
+      <div><strong>46<span>+</span></strong><small>MEDIA FORMATS</small></div>
+      <div><strong>6–12<span>×</span></strong><small>REAL-TIME GPU SPEED*</small></div>
+      <div><strong>3</strong><small>OUTPUT FORMATS</small></div>
+      <div><strong>100<span>%</span></strong><small>RESUMABLE</small></div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-head reveal"><div><span class="kicker">01 / CAPABILITIES</span><h2>Built for long-form<br><em>transcription.</em></h2></div><p>Everything needed to turn lectures, courses, podcasts and recorded sessions into structured, searchable text.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card large reveal"><div class="icon">⚡</div><span class="tag">PERFORMANCE</span><h3>GPU-first inference</h3><p>Uses faster-whisper with batched inference and CUDA 12 runtime support. Designed for NVIDIA T4, L4 and A100 environments in Google Colab.</p><div class="metric"><strong>6×–12×</strong><span>real-time speed on supported Colab GPUs</span></div></article>
+        <article class="feature-card reveal"><div class="icon">◉</div><span class="tag">MEDIA</span><h3>Smart media pipeline</h3><p>Videos are converted through FFmpeg while native audio can bypass conversion and go directly to the transcription engine.</p><div class="chips"><span>MP4</span><span>MKV</span><span>WEBM</span><span>MP3</span><span>WAV</span><span>FLAC</span><span>+40</span></div></article>
+        <article class="feature-card reveal"><div class="icon">◎</div><span class="tag">RESILIENCE</span><h3>Resume without fear</h3><p>Existing transcripts are detected and completed work is skipped. Atomic <code>.part</code> writes help protect results during interruptions.</p><div class="resume-line"><span>SESSION</span><b>18 / 24</b><i></i><span>75%</span></div></article>
+        <article class="feature-card reveal"><div class="icon">▤</div><span class="tag">STUDY MODE</span><h3>Notes, not just transcripts</h3><p>Generate readable Markdown study notes with timestamp markers, alongside standard TXT and SRT output.</p><div class="file-stack"><span>.md</span><span>.srt</span><span>.txt</span></div></article>
+      </div>
+    </section>
+
+    <section id="workflow" class="section workflow">
+      <div class="section-head reveal"><div><span class="kicker">02 / PIPELINE</span><h2>From media to<br><em>meaning.</em></h2></div><p>A clean, inspectable pipeline that keeps media handling, inference and outputs predictable.</p></div>
+      <div class="pipeline reveal">
+        <div class="pipeline-node"><span>01</span><strong>Media</strong><small>Video / Audio</small></div><div class="connector"></div>
+        <div class="pipeline-node"><span>02</span><strong>FFmpeg</strong><small>Speech extraction</small></div><div class="connector"></div>
+        <div class="pipeline-node accent"><span>03</span><strong>Whisper</strong><small>GPU inference</small></div><div class="connector"></div>
+        <div class="pipeline-node"><span>04</span><strong>Outputs</strong><small>TXT · SRT · MD</small></div>
+      </div>
+      <div class="code-window reveal">
+        <div class="code-head"><span>architecture.py</span><span>PIPELINE</span></div>
+        <pre><code><span class="purple">media_files</span> <span class="muted">→</span> <span class="blue">scan()</span> <span class="muted">→</span> <span class="blue">plan()</span>
+                    <span class="muted">↓</span>
+       <span class="green">video</span> → <span class="blue">ffmpeg_extract()</span> ─┐
+                                    ├→ <span class="purple">batched_whisper()</span>
+       <span class="green">audio</span> → <span class="blue">direct_bypass()</span> ──┘
+                                           <span class="muted">↓</span>
+                         <span class="cyan">write_atomic()</span> → <span class="yellow">.md / .srt / .txt</span></code></pre>
+      </div>
+    </section>
+
+    <section class="section models">
+      <div class="section-head reveal"><div><span class="kicker">03 / MODELS</span><h2>Choose the right<br><em>speed / quality.</em></h2></div><p>Configure the Whisper model to match your GPU memory, speed requirements and transcription quality.</p></div>
+      <div class="model-table reveal">
+        <div class="table-row table-header"><span>MODEL</span><span>VRAM</span><span>SPEED</span><span>BEST FOR</span></div>
+        <div class="table-row featured"><span><b>distil-large-v3</b><small>~756M params</small></span><span>~3 GB</span><span><b>6–10×</b></span><span>Fast, high-accuracy transcription</span></div>
+        <div class="table-row"><span><b>large-v3</b><small>~1550M params</small></span><span>~6 GB</span><span>3–5×</span><span>Maximum quality & technical jargon</span></div>
+        <div class="table-row"><span><b>medium</b><small>~769M params</small></span><span>~3 GB</span><span>5–8×</span><span>Balanced memory & quality</span></div>
+        <div class="table-row"><span><b>small</b><small>~244M params</small></span><span>~1.5 GB</span><span>8–12×</span><span>Low-VRAM systems</span></div>
+        <div class="table-row"><span><b>base</b><small>~74M params</small></span><span>~1 GB</span><span>15×+</span><span>Rapid rough drafts</span></div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+      <div class="section-head reveal"><div><span class="kicker">04 / VISUAL TOUR</span><h2>See the studio<br><em>in action.</em></h2></div><p>The real application UI, from media scanning to live GPU execution and transcript review.</p></div>
+      <div class="gallery-grid reveal">
+        <button class="shot shot-wide" data-img="screenshots/05_step5_live_dashboard.png"><img src="screenshots/05_step5_live_dashboard.png" alt="Live transcription dashboard"><span>LIVE EXECUTION DASHBOARD <b>↗</b></span></button>
+        <button class="shot" data-img="screenshots/02_step2_media_selection.png"><img src="screenshots/02_step2_media_selection.png" alt="Media selection"><span>MEDIA SCANNER <b>↗</b></span></button>
+        <button class="shot" data-img="screenshots/03_step3_model_config.png"><img src="screenshots/03_step3_model_config.png" alt="Model configuration"><span>MODEL CONFIGURATION <b>↗</b></span></button>
+        <button class="shot" data-img="screenshots/04_step4_dry_run_review.png"><img src="screenshots/04_step4_dry_run_review.png" alt="Dry run review"><span>DRY-RUN REVIEW <b>↗</b></span></button>
+        <button class="shot shot-wide" data-img="screenshots/06_transcripts_viewer.png"><img src="screenshots/06_transcripts_viewer.png" alt="Transcript viewer"><span>TRANSCRIPTS STUDIO <b>↗</b></span></button>
+      </div>
+    </section>
+
+    <section id="quickstart" class="section quickstart">
+      <div class="quick-card reveal">
+        <div><span class="kicker">05 / QUICK START</span><h2>Ready to<br><em>transcribe?</em></h2><p>Run the interactive studio in Google Colab with a GPU, or launch it locally on Windows, Linux or macOS.</p></div>
+        <div class="install">
+          <div class="tabs"><button class="tab active" data-tab="colab">Google Colab</button><button class="tab" data-tab="local">Local</button></div>
+          <div class="tab-panel active" id="colab"><div class="step"><b>01</b><span>Open the notebook</span><a href="https://colab.research.google.com/github/ASHISH213/whisper-video-studio/blob/main/Whisper_Video_Studio.ipynb" target="_blank">Open Colab ↗</a></div><div class="step"><b>02</b><span>Choose T4, L4 or A100 GPU</span></div><div class="step"><b>03</b><span>Run setup, then launch the Studio</span></div></div>
+          <div class="tab-panel" id="local"><div class="code-copy"><button id="copyLocal">COPY</button><pre>git clone https://github.com/ASHISH213/whisper-video-studio.git
+cd whisper-video-studio
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python colab_studio.py</pre></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-glow"></div>
+      <div class="reveal"><span class="kicker">OPEN SOURCE / MIT</span><h2>Your media.<br><em>Your machine.</em></h2><p>Explore the code, run the studio, or build on top of it.</p><div class="hero-actions"><a class="btn primary" href="https://github.com/ASHISH213/whisper-video-studio" target="_blank">View Repository ↗</a><a class="btn secondary" href="https://colab.research.google.com/github/ASHISH213/whisper-video-studio/blob/main/Whisper_Video_Studio.ipynb" target="_blank">Launch Colab</a></div></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark"><span></span><span></span><span></span><span></span></span><span>Whisper<span>Studio</span></span></a><p>Built with faster-whisper + FFmpeg · MIT License</p><a href="https://github.com/ASHISH213/whisper-video-studio" target="_blank">GitHub ↗</a></footer>
+
+  <div class="lightbox" id="lightbox"><button class="close" aria-label="Close">×</button><img id="lightboxImg" alt=""></div>
+  <script src="./script.js"></script>
+</body>
+</html>
