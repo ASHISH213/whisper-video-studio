@@ -1,0 +1,4 @@
+faster-whisper>=1.0.0
+av==18.1.0
+nvidia-cublas-cu12; platform_system == "Linux"
+nvidia-cudnn-cu12==9.*; platform_system == "Linux"

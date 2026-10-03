@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Scratch & Temporary Test Artifacts
+scratch/
+test_media/
+*.part
+*.tmp
+*.log
+
+# IDE & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
